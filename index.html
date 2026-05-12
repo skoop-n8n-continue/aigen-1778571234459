@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="glass-card">
+            <h1 class="title">Stopwatch</h1>
+
+            <div class="display-container">
+                <div id="display" class="stopwatch-display">00:00:00:<span class="ms">000</span></div>
+            </div>
+
+            <div class="controls">
+                <button id="startStopBtn" class="btn btn-start" title="Start (Space)">
+                    <i data-lucide="play"></i>
+                </button>
+                <button id="lapBtn" class="btn btn-lap" title="Lap (L)" disabled>
+                    <i data-lucide="timer"></i>
+                </button>
+                <button id="resetBtn" class="btn btn-reset" title="Reset (R)">
+                    <i data-lucide="rotate-ccw"></i>
+                </button>
+            </div>
+
+            <div class="extra-controls">
+                <button id="exportBtn" class="btn-text" title="Export Laps">
+                    <i data-lucide="download"></i> Export Laps
+                </button>
+                <button id="themeToggle" class="btn-text" title="Toggle Theme">
+                    <i data-lucide="sun"></i>
+                </button>
+            </div>
+
+            <div class="laps-container">
+                <div class="laps-header">
+                    <span>Lap #</span>
+                    <span>Lap Time</span>
+                    <span>Total Time</span>
+                </div>
+                <ul id="lapsList" class="laps-list">
+                    <!-- Laps will appear here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <audio id="lapSound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
